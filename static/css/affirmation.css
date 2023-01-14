@@ -1,0 +1,21 @@
+body {
+  color: white;
+  margin: 0;
+}
+.image-background {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('./laura-chouette-DZTfUe9YQuA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  text-shadow: 1px 2px black;
+}
