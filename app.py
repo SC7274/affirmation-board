@@ -21,8 +21,7 @@ def index():
 def my_form_post():
     quotes_txt = open("quotes.txt", "a")
     message = request.form['user_quote']
-    processed_text = message.upper()
-    quotes_txt.write("\n" + processed_text)
+    quotes_txt.write("\n" + message)
     quotes_txt.close()
 
     quotes_txt = open("quotes.txt", "r")

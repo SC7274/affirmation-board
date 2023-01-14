@@ -26,14 +26,21 @@ body {
   right: 20px;
 }
 
+.textbox {
+  font-family:'Times New Roman', Times, serif;
+}
+
+.submit-button {
+  font-family:'Times New Roman', Times, serif;
+}
 
 input[type="text"] {
-  padding: 0.5em;
+
   margin: 0.5em;
   width: 20em;
   outline: none;
   border: none;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid white;
   background-color: transparent;
   color: white;
 }
@@ -42,4 +49,8 @@ input[type="submit"] {
   background-color: transparent;
   border: none;
   color: white;
+}
+
+input::placeholder {
+  color: #beb0a8
 }
