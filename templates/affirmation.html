@@ -19,12 +19,22 @@
     </div>
 
     <div class="text-container">
-        <form method="POST">
+        <form method="POST" id="user-quote">
             <input class="textbox" type="text" placeholder="leave an uplifting message to the board..." name="user_quote">
             <input class="submit-button" type="submit" value="Submit">
         </form>
+        <div id="success-message" style="display: none;">Success!</div>
+        <script>
+            document.getElementById("user-quote").addEventListener("submit", function(event){
+                event.preventDefault();
+                document.getElementById("success-message").style.display = "block";
+                setTimeout(function(){
+                    document.getElementById("success-message").style.display = "none";
+                }, 3000);
+            });
+        </script>
     </div>
-
+    
       
 </body>
 
