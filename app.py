@@ -32,10 +32,5 @@ def my_form_post():
     quotes_txt.close()
     return render_template('affirmation.html', quote = quote)
 
-
- 
-
-
-
 if __name__ == "__main__":
     app.run(debug = True, port=5000)
