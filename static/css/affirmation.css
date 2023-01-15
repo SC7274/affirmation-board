@@ -2,6 +2,7 @@ body {
   color: white;
   margin: 0;
 }
+
 .image-background {
   height: 100vh;
   min-height: 500px;
@@ -34,8 +35,11 @@ body {
   font-family:'Times New Roman', Times, serif;
 }
 
-input[type="text"] {
+input::placeholder {
+  color: #beb0a8
+}
 
+input[type="text"] {
   margin: 0.5em;
   width: 20em;
   outline: none;
@@ -51,6 +55,11 @@ input[type="submit"] {
   color: white;
 }
 
-input::placeholder {
-  color: #beb0a8
+#success-message{
+  font-size: smaller;
+  color: #beb0a8;
+  position: fixed;
+  bottom: 10px;
+  right: 18px;
 }
+
