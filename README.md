@@ -1,5 +1,6 @@
 # Positive Affirmation Message Board
 A web application that allows users to view and submit positive affirmations quotes.  
+![](https://github.com/SC7274/affirmation-board/blob/master/demo.gif)
 
 ## Features
 Randomly displays positive affirmations from a pre-made pool of quotes  
