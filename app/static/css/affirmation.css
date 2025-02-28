@@ -1,0 +1,101 @@
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.image-background {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('./laura-chouette-DZTfUe9YQuA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  text-shadow: 1px 2px black;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.textbox {
+  font-family: 'Times New Roman', Times, serif; 
+  min-width: 350px;
+  box-sizing: border-box; 
+  resize: vertical;
+}
+
+.submit-button {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.delete-button {
+  font-family: 'Times New Roman', Times, serif;
+  background-blend-mode: overlay;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+
+input::placeholder {
+  color: #beb0a8;
+}
+
+.button-container {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.button-left,
+.button-right {
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+}
+
+#success-message,
+#error-message {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  text-align: left;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+#error-message {
+  color: red;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}

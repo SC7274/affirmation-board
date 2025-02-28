@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quotes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/affirmation.css') }}">
+</head>
+
+<body>
+    <div class="button-container">
+        <a href="{{ url_for('main.index') }}" class="button-left">Back to Affirmation Board</a>
+        <a href="{{ url_for('main.logout') }}" class="button-right">Logout</a>
+    </div>
+    <div class='image-background'>
+        <h1>My Quotes</h1>
+        <ul>
+            {% for quote in quotes %}
+            <li>
+                <span>{{ quote.text }}</span>
+                <button class="delete-button" data-quote-id="{{ quote.id }}">Delete</button>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <script>
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const quoteId = this.getAttribute('data-quote-id');
+                fetch(`/delete_quote/${quoteId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            this.parentElement.remove();
+                        } else {
+                            alert(data.message);
+                        }
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

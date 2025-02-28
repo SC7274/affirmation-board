@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/affirmation.css') }}">
+</head>
+<body>
+    <div class="button-container">
+        {% if session.get('user_id') %}
+        <a href="{{ url_for('main.my_quotes') }}" class="button-left">My Quotes</a>
+        <a href="{{ url_for('main.logout') }}" class="button-right">Logout</a>
+        {% else %}
+        <a href="{{ url_for('main.login') }}" class="button-right">Login</a>
+        {% endif %}
+    </div>
+    <div class='image-background'>
+        <div class='container h-100'>
+            <div class='row h-100 align-items-center'>
+                <div class='col-12 text-center'>
+                    <div class="centered">{{ quote }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-container">
+        <form method="POST" id="user-quote">
+            <input class="textbox" type="text" placeholder="Submit an uplifting message to the board..." name="user_quote">
+            <input class="submit-button" type="submit" value="Submit">
+            <div id="success-message" style="display: none;">Success!</div>
+            <div id="error-message" style="display: none;">Failed to submit quote. Please try again.</div>
+        </form>
+        <script>
+            document.getElementById("user-quote").addEventListener("submit", function (event) {
+                event.preventDefault();
+                var formData = new FormData(event.target);
+                fetch("/", {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById("success-message").style.display = "block";
+                            setTimeout(function () {
+                                document.getElementById("success-message").style.display = "none";
+                            }, 3000);
+                        } else {
+                            document.getElementById("error-message").style.display = "block";
+                            setTimeout(function () {
+                                document.getElementById("error-message").style.display = "none";
+                            }, 3000);
+                        }
+                    });
+            });
+        </script>
+    </div>
+</body>
+</html>
