@@ -11,6 +11,9 @@ Users can log in using their Google account, submit their own quotes, view quote
 - View random quotes on the main page
 - View and delete quotes you submitted
 
+  ![image](https://github.com/user-attachments/assets/87f2aefd-30f2-4283-883b-c566feb5d08e)
+
+
 ## Technologies Used
 
 - Flask
